@@ -5,9 +5,9 @@
 #include <windows.h>
 #endif
 
-#define QUEUE_SIZE 5      // розмір масиву черги
-#define SEC_PER_PAGE 2    // скільки секунд друкується одна сторінка
-#define MAX_JOBS 20       // максимум завдань при ручному введенні
+#define QUEUE_SIZE 5      
+#define SEC_PER_PAGE 2    
+#define MAX_JOBS 20       
 
 typedef struct {
     int id;
@@ -16,9 +16,9 @@ typedef struct {
 } Job;
 
 Job data[QUEUE_SIZE];
-int head = 0;     // індекс першого елемента
-int tail = 0;     // індекс комірки, куди піде наступний елемент
-int count = 0;    // скільки елементів зараз у черзі
+int head = 0;    
+int tail = 0;    
+int count = 0;   
 
 bool is_empty(void)
 {
@@ -80,9 +80,9 @@ Job make_job(int id, int arrival, int pages)
 // jobs має бути впорядкований за часом надходження
 void simulate(Job jobs[], int m)
 {
-    int next = 0;   // перше завдання, яке ще не потрапило в чергу
-    int now = 0;    // поточний момент часу, с
-    int busy = 0;   // скільки секунд принтер друкував
+    int next = 0;  
+    int now = 0;    
+    int busy = 0;   
     Job cur;
 
     clear_queue();
