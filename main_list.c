@@ -21,8 +21,8 @@ typedef struct Node {
     struct Node *next;
 } Node;
 
-Node *head = NULL;    // перший вузол, звідси забираємо
-Node *tail = NULL;    // останній вузол, сюди додаємо
+Node *head = NULL;   
+Node *tail = NULL;    
 int count = 0;
 
 bool is_empty(void)
@@ -32,7 +32,7 @@ bool is_empty(void)
 
 bool is_full(void)
 {
-    return false;     // розмір обмежений лише пам'яттю
+    return false;    
 }
 
 bool enqueue(Job job)
@@ -104,7 +104,6 @@ void simulate(Job jobs[], int m)
 
     clear_queue();
     while (next < m || !is_empty()) {
-        // у чергу йдуть усі завдання, що вже надійшли, поки є місце
         while (next < m && jobs[next].arrival <= now && !is_full()) {
             enqueue(jobs[next]);
             next++;
